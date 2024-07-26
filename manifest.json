@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Pause/Resume",
+  "version": "1.0",
+  "description": "Pauses YouTube videos when you switch tabs or focus away and resumes when you return.",
+  "permissions": ["tabs", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
+}
